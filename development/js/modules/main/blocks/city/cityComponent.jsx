@@ -87,7 +87,6 @@ class cityComponent extends React.Component {
 }
 
 function mapState (state) {
-    console.log(state.cities)
     return {
         cities: state.cities ? state.cities.toJS() : []
     }
