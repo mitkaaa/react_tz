@@ -20,7 +20,7 @@ export default class Main extends React.Component {
         return (
             <div className="wrapper-content">
                 <City />
-                <h1 className="wrapper-content__number">{ this.state.num}</h1>
+                <h1 className="wrapper-content__number"></h1>
             </div>
         )
     }

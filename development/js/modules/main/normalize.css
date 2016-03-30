@@ -348,7 +348,7 @@ input::-moz-focus-inner {
 
 button:-moz-focusring,
 input:-moz-focusring {
-  outline: 1px dotted ButtonText;
+  outline: 0px;
 }
 
 /**

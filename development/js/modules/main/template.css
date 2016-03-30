@@ -31,3 +31,21 @@ body{
         }
     }
 }
+
+.hidden-opacity, .hide-opacity {
+    opacity:0;
+}
+
+.hidden, .hide {
+    display: none;
+}
+
+.scrollarea .scrollbar-container.vertical {
+    .scrollbar {
+        background: #FFF!important;
+        border-radius: 100px;
+    }
+}
+.scrollarea .scrollbar-container.active, .scrollarea .scrollbar-container:hover {
+    background: rgba(255, 255, 255, 0.3)!important;
+}

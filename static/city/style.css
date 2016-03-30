@@ -29,27 +29,14 @@
             cursor: pointer;
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
             padding: 2em;
-            &-close {
-                position: absolute;
-                right: 10px;
-                top: 10px;
-                color: #FFF;
-                opacity: 0.2;
-                &:hover {
-                    opacity: 0.5;
-                }
-                &:active {
-                    opacity: 0.4;
-                }
-            }
-            &-under {
-                font-size: 0.8em;
-                opacity: 0.5;
-            }
             &-city {
                 p {
                     font-size: 1em;
                     margin: 0;
+                }
+                span {
+                    font-size: 0.8em;
+                    opacity: 0.5;
                 }
             }
             &-weather {
