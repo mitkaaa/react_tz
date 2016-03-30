@@ -10,7 +10,6 @@ import { connect } from 'react-redux'
 import { Actions } from '__data__'
 
 class cityComponent extends React.Component {
-    // Constructor
     constructor (props) {
         super(props)
         this.wheatherActions = bindActionCreators(Actions.wheatherActions, props.dispatch)
@@ -44,7 +43,6 @@ class cityComponent extends React.Component {
     }
     
     render () {
-        console.log(this.props)
         return (
             <div className="city">
                 <ScrollArea
