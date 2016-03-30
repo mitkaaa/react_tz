@@ -1,5 +1,5 @@
 #!/bin/bash
 
-export NODE_ENV=development
+export NODE_ENV=production
 npm i
 node_modules/gulp/bin/gulp.js production

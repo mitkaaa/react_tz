@@ -1,3 +1,4 @@
+import './normalize.css'
 import './template.css'
 
 import React from 'react'
@@ -10,10 +11,7 @@ class Template extends React.Component {
         super(props)
     }
 
-    componentDidMount () {
-        window.addEventListener('resize', () => {
-        }, true)    
-    }
+    componentDidMount () {}
     render() {
         return (
             <div className="wrapper">
