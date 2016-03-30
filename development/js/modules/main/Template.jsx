@@ -1,5 +1,6 @@
 import './normalize.css'
 import './template.css'
+import './weather-icons.css'
 
 import React from 'react'
 import { connect } from 'react-redux'

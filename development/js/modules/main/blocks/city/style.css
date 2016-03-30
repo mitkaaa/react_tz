@@ -35,6 +35,7 @@
                 top: 10px;
                 color: #FFF;
                 opacity: 0.2;
+                z-index: 6;
                 &:hover {
                     opacity: 0.5;
                 }
@@ -45,25 +46,34 @@
             &-under {
                 font-size: 0.8em;
                 opacity: 0.5;
+                padding-right: 95px;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                display: block;
             }
             &-city {
                 p {
+                    padding-right: 100px;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
                     font-size: 1em;
                     margin: 0;
+                    
                 }
             }
             &-weather {
                 position: absolute;
                 right: 2em;
                 top: 50%;
-                margin-top: -15px;
+                margin-top: -20px;
             }
             &-weather-icon {
-                size: 30px;
-                background: #FFF;
+                size: 40px;
                 display: inline-block;
                 vertical-align: middle;
-                margin-right: 10px;
+                margin-right: 0px;
             }
             &-weather-degr {
                 font-size: 1.5em;

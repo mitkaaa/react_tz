@@ -1,0 +1,38 @@
+.weather-icon {
+    &-01d {
+        background: svg("01d", "[fill]: white");
+    }   
+    &-01n {
+        background: svg("01n", "[fill]: white");
+    }   
+    &-02d {
+        background: svg("02d", "[fill]: white");
+    }   
+    &-02n {
+        background: svg("02n", "[fill]: white");
+    }  
+    &-03d, &-03n {
+        background: svg("03d", "[fill]: white");
+    }
+    &-04d, &-04n {
+        background: svg("03d", "[fill]: white");
+    }
+    &-09d, &-09n {
+        background: svg("09d", "[fill]: white");
+    }
+    &-10d {
+        background: svg("10d", "[fill]: white");
+    }     
+    &-10n {
+        background: svg("10n", "[fill]: white");
+    } 
+    &-11d, &-11n {
+        background: svg("11d", "[fill]: white");
+    }   
+    &-13d, &-13n {
+        background: svg("13d", "[fill]: white");
+    }   
+    &-50d, &-50n {
+        background: svg("50d", "[fill]: white");
+    }   
+}

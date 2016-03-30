@@ -8,6 +8,7 @@ var autoprefixer        = require('autoprefixer'),
     vars                = require('postcss-simple-vars'),
     calc                = require('postcss-calc'),
     size                = require('postcss-size'),
+    postcssSvg          = require('postcss-svg'),
     ExtractTextPlugin   = require('extract-text-webpack-plugin')
     
     module.exports = {
@@ -51,7 +52,11 @@ var autoprefixer        = require('autoprefixer'),
                         }
                     }),
                 calc,
-                size
+                size,
+                postcssSvg({
+                    paths: [config.PATH.FRONTSIDE + '/../style/icons/'],
+                    defaults: '[fill]: #333',
+                })
             ]
         },
         

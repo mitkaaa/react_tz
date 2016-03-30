@@ -37,7 +37,14 @@ class cityComponent extends React.Component {
         }
     }
     
+    activeCity (city) {
+        return () => {
+            this.wheatherActions.activeCity(city)
+        }
+    }
+    
     render () {
+        console.log(this.props)
         return (
             <div className="city">
                 <ScrollArea
@@ -47,29 +54,23 @@ class cityComponent extends React.Component {
                     >
                     <dl className="city-list">
                         {_.map(this.props.cities, (item, key) => {
-                            return (<dt className="city-list--col city-list--col-event" key={key}>
+                            return (<dt className={classnames('city-list--col', 'city-list--col-event', {'city-list--col-active': item.active})} key={key} onClick={this.activeCity(key)}>
                                 <span className="city-list--col-close" onClick={this.closeCity(key)}>×</span>
                                 <div className="city-list--col-city">
-                                    <p>{item.name} [{item.sys.country}]</p>
-                                    <span className="city-list--col-under">Суббота, 19 июля</span>
+                                    <p>{item.city.name} {item.city.country}</p>
+                                    <span className="city-list--col-under">{item.date}</span>
                                 </div>
                                 <div className="city-list--col-weather">
-                                    <span className="city-list--col-weather-icon" />
-                                    <span className="city-list--col-weather-degr">-19 &deg;</span>
+                                    <span className={classnames('city-list--col-weather-icon', 'weather-icon-' + item.list[0].weather[0].icon )}/>
+                                    <span className="city-list--col-weather-degr">
+                                    {Math.abs( item.list[0].temp.day) === item.list[0].temp.day && '+'}
+                                    {Math.abs( item.list[0].temp.day) !== item.list[0].temp.day && '-'}
+                                    {Math.abs(Math.round(item.list[0].temp.day))} &deg;
+                                    </span>
                                 </div>
                             </dt>)
                         })}
                         
-                        <dt className="city-list--col city-list--col-event city-list--col-active">
-                            <div className="city-list--col-city">
-                                <p>Санкт-петербург</p>
-                                <span>Суббота, 19 июля</span>
-                            </div>
-                            <div className="city-list--col-weather">
-                                <span className="city-list--col-weather-icon" />
-                                <span className="city-list--col-weather-degr">+23 &deg;</span>
-                            </div>
-                        </dt>
                         <dt className={classnames('city-list--col', { hidden: !this.state.newCity})}>
                             <form onSubmit={this.cityInputSubmit.bind(this)}>
                                 <input type="text" className="city-list--input" ref="cityInput" />
