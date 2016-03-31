@@ -4,8 +4,6 @@ import './weather-icons.css'
 
 import React from 'react'
 import { connect } from 'react-redux'
-import { Col } from 'react-bootstrap'
-
 
 class Template extends React.Component {
     constructor(props) {

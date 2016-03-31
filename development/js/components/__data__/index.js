@@ -9,6 +9,5 @@ const reducer = combineReducers(Reducers)
 
 // let initialState = window.__INITIAL_STATE__ // 
 
-
 export const store = applyMiddleware(promiseMiddleware)(createStore)(reducer)
 export { Actions, Reducers }

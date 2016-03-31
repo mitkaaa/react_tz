@@ -4,14 +4,10 @@ import _ from 'lodash'
 import React from 'react'
 import { Col } from 'react-bootstrap'
 import classnames from 'classnames'
-// import { bindActionCreators } from 'redux'
-
-// import { Actions } from '__data__'
 
 export default class viewComponent extends React.Component {
     constructor (props) {
         super(props)
-        // this.wheatherActions = bindActionCreators(Actions.wheatherActions, props.dispatch)
     }
 
     degr (value) {
