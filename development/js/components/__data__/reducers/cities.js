@@ -10,15 +10,17 @@ export default (state = new Map(data), action) => {
     case types.CITY: {
         let today = moment()
         const responce = action.res.data
+        const firstElement = responce.list[0]
         const newState = state.set(responce.city.name, _.extend(
             responce,
-            { moment: today, date: today.format('dddd, D MMMM'), active: false},
-            { list: _(responce.list).map((item, key) => {
+            { moment: today, date: { dddd: today.format('dddd'), DMMMM: today.format('D MMMM') }, active: false},
+            firstElement,
+            { list: _(responce.list).drop().map((item, key) => {
+                today.add(1, 'd')
                 const itemWithDate = _.extend(
                     item,
-                    { moment: today, date: today.format('dddd, D MMMM')}
+                    { moment: today, date: { dddd: today.format('dddd'), DMMMM: today.format('D MMMM') }}
                 )
-                today.add(1, 'd')
                 return itemWithDate
             }).value()}
         ))

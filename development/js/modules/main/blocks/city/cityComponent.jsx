@@ -5,14 +5,13 @@ import React from 'react'
 import ScrollArea from 'react-scrollbar'
 import classnames from 'classnames'
 import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
 
-import { Actions } from '__data__'
+import { Actions, store } from '__data__'
 
-class cityComponent extends React.Component {
+export default class cityComponent extends React.Component {
     constructor (props) {
         super(props)
-        this.wheatherActions = bindActionCreators(Actions.wheatherActions, props.dispatch)
+        this.wheatherActions = bindActionCreators(Actions.wheatherActions, store.dispatch)
         this.state = {
             newCity: false
         }
@@ -56,14 +55,14 @@ class cityComponent extends React.Component {
                                 <span className="city-list--col-close" onClick={this.closeCity(key)}>×</span>
                                 <div className="city-list--col-city">
                                     <p>{item.city.name} {item.city.country}</p>
-                                    <span className="city-list--col-under">{item.date}</span>
+                                    <span className="city-list--col-under">{item.date.dddd}, {item.date.DMMMM}</span>
                                 </div>
                                 <div className="city-list--col-weather">
-                                    <span className={classnames('city-list--col-weather-icon', 'weather-icon-' + item.list[0].weather[0].icon )}/>
+                                    <span className={classnames('city-list--col-weather-icon', 'weather-icon-' + item.weather[0].icon )}/>
                                     <span className="city-list--col-weather-degr">
-                                    {Math.abs( item.list[0].temp.day) === item.list[0].temp.day && '+'}
-                                    {Math.abs( item.list[0].temp.day) !== item.list[0].temp.day && '-'}
-                                    {Math.abs(Math.round(item.list[0].temp.day))} &deg;
+                                    {Math.abs( item.temp.day) === item.temp.day && '+'}
+                                    {Math.abs( item.temp.day) !== item.temp.day && '-'}
+                                    {Math.abs(Math.round(item.temp.day))} &deg;
                                     </span>
                                 </div>
                             </dt>)
@@ -85,10 +84,17 @@ class cityComponent extends React.Component {
     }
 }
 
+cityComponent.defaultProps = {
+    cities: {}
+}
+
+cityComponent.propTypes = {
+    cities: React.PropTypes.object
+}
+
+
 function mapState (state) {
     return {
         cities: state.cities ? state.cities.toJS() : []
     }
 }
-
-export default connect(mapState)(cityComponent)

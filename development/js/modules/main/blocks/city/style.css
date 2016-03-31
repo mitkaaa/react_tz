@@ -46,7 +46,7 @@
             &-under {
                 font-size: 0.8em;
                 opacity: 0.5;
-                padding-right: 95px;
+                padding-right: 80px;
                 text-overflow: ellipsis;
                 white-space: nowrap;
                 overflow: hidden;
@@ -54,7 +54,7 @@
             }
             &-city {
                 p {
-                    padding-right: 100px;
+                    padding-right: 80px;
                     text-overflow: ellipsis;
                     white-space: nowrap;
                     overflow: hidden;

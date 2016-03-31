@@ -13,7 +13,7 @@ const appId = 'c3ed5a5a7660cb33f82cf43558d0f5d4'
 export function fetch(city) {
     return {
         type: types.CITY,
-        promise: axios.get(`http://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&cnt=16&mode=json&units=metric&appid=${appId}`)
+        promise: axios.get(`http://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&cnt=7&mode=json&units=metric&appid=${appId}`)
     }
 }
 

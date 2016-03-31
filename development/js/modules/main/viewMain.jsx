@@ -1,12 +1,14 @@
 import React from 'react'
-import City from './blocks/city'
+import { connect } from 'react-redux'
+import _ from 'lodash'
 
-export default class Main extends React.Component {
+import City from './blocks/city'
+import View from './blocks/view'
+
+class Main extends React.Component {
     constructor (props) {
         super(props)
-        this.state = {
-            num: 1
-        }
+        this.state = {}
     }
     
     componentDidMount () {
@@ -19,9 +21,28 @@ export default class Main extends React.Component {
     render () {
         return (
             <div className="wrapper-content">
-                <City />
-                <h1 className="wrapper-content__number"></h1>
+                <City cities={this.props.cities} />
+                <View city={this.props.city} />
             </div>
         )
     }
 }
+Main.defaultProps = {
+    cities: {},
+    city: {}
+}
+
+Main.propTypes = {
+    cities: React.PropTypes.object,
+    city: React.PropTypes.object
+}
+
+
+function mapState (state) {
+    const cities = state.cities ? state.cities.toJS() : []
+    const city = _.reduce(cities, (result, item, key) => item.active ? item : result)
+    
+    return { cities, city }
+}
+
+export default connect(mapState)(Main)

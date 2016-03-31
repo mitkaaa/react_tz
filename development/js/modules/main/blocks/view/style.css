@@ -1,0 +1,46 @@
+.view {
+    margin: 0 auto;
+    text-align: center;
+    &-today {
+        &-col {
+		    margin: 1em;
+		    &--dddd {
+		        font-size: 2em;
+		    }
+		    &--DMMMM {
+		        font-size: 0.8em;
+		        opacity: 0.5;
+		        margin: 0 auto;
+		        display:block;
+		    }
+		    &--icon {
+		        margin: 0 auto;
+		        size: 150px;
+		    }
+		    &--degr {
+                font-size: 2.5em;
+		    }
+		}
+    }
+    &-under {
+        margin-top: 50px;
+		display: -webkit-flex;
+		display: flex;
+		flex-basis: 100%;
+		&-col {
+		    margin: 1em;
+		    &--dddd {}
+		    &--DMMMM {
+		        font-size: 0.8em;
+		        opacity: 0.5;
+		        display: block;
+		    }
+		    &--icon {
+		        size: 80px;
+		    }
+		    &--degr {
+		        font-size: 1.5em;
+		    }
+		}
+    }
+}
